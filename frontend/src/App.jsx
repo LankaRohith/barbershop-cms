@@ -1,6 +1,8 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { Navbar, Footer } from './components/Layout';
 import { AuthProvider, useAuth } from './context/AuthContext';
+import PageTransition from './components/PageTransition';
+import TabSwitchAnimation from './components/TabSwitchAnimation';
 
 // Public Pages
 import Home from './pages/Home';
@@ -50,10 +52,11 @@ const AdminRoute = ({ element: Element }) => (
   </ProtectedRoute>
 );
 
-function App() {
+function AppRoutes() {
   return (
-    <AuthProvider>
-      <Router>
+    <>
+      <TabSwitchAnimation />
+      <PageTransition>
         <Routes>
           {/* Public Routes */}
           <Route 
@@ -83,6 +86,16 @@ function App() {
           {/* Fallback */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
+      </PageTransition>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <AuthProvider>
+      <Router>
+        <AppRoutes />
       </Router>
     </AuthProvider>
   );
