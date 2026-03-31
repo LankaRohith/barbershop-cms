@@ -2,18 +2,18 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const TabSwitchAnimation = () => {
-  const [phase, setPhase] = useState('hidden'); // 'hidden', 'flash', 'burst', 'welcome', 'done'
+  const [phase, setPhase] = useState('idle');
 
   useEffect(() => {
     const handleVisibilityChange = () => {
       if (document.hidden) {
-        setPhase('hidden');
+        setPhase('idle');
       } else {
-        // Sequence: flash → burst → welcome
         setPhase('flash');
-        setTimeout(() => setPhase('burst'), 300);
-        setTimeout(() => setPhase('welcome'), 800);
-        setTimeout(() => setPhase('done'), 3000);
+        setTimeout(() => setPhase('shred'), 150);
+        setTimeout(() => setPhase('explode'), 400);
+        setTimeout(() => setPhase('welcome'), 900);
+        setTimeout(() => setPhase('idle'), 3500);
       }
     };
 
@@ -21,77 +21,34 @@ const TabSwitchAnimation = () => {
     return () => document.removeEventListener('visibilitychange', handleVisibilityChange);
   }, []);
 
+  if (phase === 'idle') return null;
+
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence>
       {phase === 'flash' && (
         <motion.div
-          key="flash"
           className="fixed inset-0 z-[9999] pointer-events-none"
           initial={{ opacity: 0 }}
           animate={{ 
-            opacity: [0, 1, 0, 1, 0, 1, 0],
-            background: [
-              '#000',
-              '#d4af37',
-              '#000',
-              '#d4af37',
-              '#000',
-              '#d4af37',
-              '#000',
-            ]
+            opacity: [0, 1, 0, 1, 0, 1, 0, 1, 0],
+            background: ['#000', '#fff', '#000', '#d4af37', '#000', '#fff', '#000', '#d4af37', '#000']
           }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5, times: [0, 0.15, 0.3, 0.45, 0.6, 0.75, 1] }}
+          transition={{ duration: 0.3, times: [0, 0.11, 0.22, 0.33, 0.44, 0.55, 0.66, 0.77, 1] }}
         />
       )}
 
-      {phase === 'burst' && (
-        <motion.div
-          key="burst"
-          className="fixed inset-0 z-[9999] pointer-events-none overflow-hidden"
-          style={{ background: 'radial-gradient(circle, #d4af37 0%, #000 100%)' }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}
-        >
-          {/* Exploding scissors */}
-          {[...Array(20)].map((_, i) => (
+      {phase === 'shred' && (
+        <div className="fixed inset-0 z-[9999] pointer-events-none flex">
+          {[...Array(8)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute text-5xl"
-              style={{
-                left: '50%',
-                top: '50%',
-              }}
-              initial={{ scale: 0, x: 0, y: 0, rotate: 0 }}
-              animate={{ 
-                scale: [0, 2, 0],
-                x: Math.cos(i * 18 * Math.PI / 180) * 400,
-                y: Math.sin(i * 18 * Math.PI / 180) * 400,
-                rotate: i * 36,
-              }}
-              transition={{ duration: 0.8, ease: 'easeOut' }}
-            >
-              ✂️
-            </motion.div>
-          ))}
-          
-          {/* Center shockwave */}
-          <motion.div
-            className="absolute inset-0 flex items-center justify-center"
-          >
-            <motion.div
-              className="w-0 h-0 rounded-full border-8 border-white"
-              animate={{
-                width: [0, 800, 1000],
-                height: [0, 800, 1000],
-                opacity: [1, 0.5, 0],
-              }}
-              transition={{ duration: 0.6, ease: 'easeOut' }}
+              className="flex-1 bg-gradient-to-b from-barber-gold via-white to-barber-gold"
+              initial={{ y: i % 2 === 0 ? '-100%' : '100%', opacity: 1 }}
+              animate={{ y: i % 2 === 0 ? '100%' : '-100%', opacity: [1, 1, 0] }}
+              transition={{ duration: 0.3, delay: i * 0.02, ease: 'easeInOut' }}
             />
-          </motion.div>
-        </motion.div>
+          ))}
+        </div>
       )}
 
       {phase === 'welcome' && (
