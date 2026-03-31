@@ -155,21 +155,13 @@ const Home = () => {
       {/* CTA Section */}
       <section className="py-20 px-4 bg-barber-800/50">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready for a Fresh Cut?
-          </h2>
-          <p className="text-gray-400 mb-8">
-            Visit us today and experience the difference. Walk-ins welcome, appointments preferred.
+          <p className="text-2xl md:text-3xl font-display text-white mb-8">
+            Walk in as you are, leave as a gentleman
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <div className="flex items-center justify-center gap-2 text-gray-300">
               <MapPin className="w-5 h-5 text-barber-gold" />
               <span>260 Royal Palm Beach Blvd, Royal Palm Beach, FL 33411</span>
-            </div>
-            <div className="hidden sm:block text-gray-600">|</div>
-            <div className="flex items-center justify-center gap-2 text-gray-300">
-              <Star className="w-5 h-5 text-barber-gold" />
-              <span>4.4 Rating (155 Reviews)</span>
             </div>
           </div>
         </div>
