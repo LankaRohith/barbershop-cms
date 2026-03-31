@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Clock, Scissors } from 'lucide-react';
-import { getServices } from '../api';
+import { getServices } from '../api/index.js';
 import LoadingSpinner from '../components/LoadingSpinner';
 
 const Services = () => {

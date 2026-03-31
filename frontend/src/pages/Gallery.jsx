@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getGallery, getEmployees } from '../api';
+import { getGallery, getEmployees } from '../api/index.js';
 import LoadingSpinner from '../components/LoadingSpinner';
 
 const Gallery = () => {

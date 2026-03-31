@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Scissors, Clock, MapPin, Star, ChevronRight } from 'lucide-react';
-import { getServices, getEmployees, getGallery } from '../api';
+import { getServices, getEmployees, getGallery } from '../api/index.js';
 import LoadingSpinner from '../components/LoadingSpinner';
 
 const Home = () => {
