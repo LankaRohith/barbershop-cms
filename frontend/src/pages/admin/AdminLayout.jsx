@@ -18,8 +18,8 @@ const AdminLayout = ({ children }) => {
       <aside className="w-64 bg-barber-800 border-r border-barber-700 hidden md:flex flex-col">
         <div className="p-6 border-b border-barber-700">
           <Link to="/" className="flex items-center gap-2">
-            <Scissors className="w-6 h-6 text-barber-gold" />
-            <span className="font-display text-lg font-bold text-white">Classic Cuts</span>
+            <img src="/logo1.jpg" alt="Masters Barbershop" className="w-8 h-8 rounded-full object-cover" />
+            <span className="font-display text-lg font-bold text-white">Masters Barbershop</span>
           </Link>
         </div>
 
