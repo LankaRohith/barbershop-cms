@@ -17,7 +17,6 @@ const ServicesManager = () => {
     price: '',
     description: '',
     duration_minutes: 30,
-    is_active: true,
   });
 
   useEffect(() => {
@@ -44,7 +43,7 @@ const ServicesManager = () => {
       });
       addToast('Service added successfully');
       setShowAddForm(false);
-      setFormData({ name: '', price: '', description: '', duration_minutes: 30, is_active: true });
+      setFormData({ name: '', price: '', description: '', duration_minutes: 30 });
       fetchServices();
     } catch (error) {
       addToast('Failed to add service', 'error');
