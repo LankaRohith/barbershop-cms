@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException, status, Depends, File, UploadFile, Form
+from fastapi import APIRouter, HTTPException, status, Depends, File, UploadFile, Form, Request
 from typing import List, Optional
 from datetime import datetime
 from beanie import PydanticObjectId
@@ -13,8 +13,10 @@ from app.cloudinary import upload_image, delete_image
 router = APIRouter()
 
 
-async def get_current_user(token: str = Depends(lambda x: x.headers.get("authorization", "").replace("Bearer ", ""))):
+def get_current_user(request: Request):
     """Validate JWT token and return user info."""
+    auth_header = request.headers.get("authorization", "")
+    token = auth_header.replace("Bearer ", "") if auth_header.startswith("Bearer ") else ""
     if not token:
         raise HTTPException(status_code=401, detail="Authentication required")
     payload = decode_token(token)
