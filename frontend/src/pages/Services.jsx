@@ -26,7 +26,7 @@ const Services = () => {
   return (
     <div className="min-h-screen py-20 px-4">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-slide-up opacity-0" style={{ animationFillMode: 'forwards' }}>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">
             Our Services
           </h1>
@@ -40,13 +40,13 @@ const Services = () => {
           {services.map((service, index) => (
             <div 
               key={service._id} 
-              className="card hover:border-barber-gold/50 transition-all duration-300 hover:-translate-y-1"
+              className="card group"
             >
               <div className="flex items-start justify-between mb-4">
-                <div className="w-12 h-12 rounded-full bg-barber-gold/10 flex items-center justify-center">
-                  <Scissors className="w-6 h-6 text-barber-gold" />
+                <div className="w-12 h-12 rounded-full bg-barber-gold/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Scissors className="w-6 h-6 text-barber-gold group-hover:rotate-12 transition-transform" />
                 </div>
-                <span className="text-barber-gold font-bold text-2xl">${service.price}</span>
+                <span className="text-barber-gold font-bold text-2xl group-hover:scale-110 transition-transform">${service.price}</span>
               </div>
               
               <h3 className="font-display text-xl font-bold text-white mb-2">
