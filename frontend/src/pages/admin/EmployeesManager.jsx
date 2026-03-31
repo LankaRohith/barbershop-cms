@@ -35,6 +35,10 @@ const EmployeesManager = () => {
 
   const handleAdd = async (e) => {
     e.preventDefault();
+    if (!formData.name) {
+      addToast('Please enter employee name', 'error');
+      return;
+    }
     try {
       await createEmployee(formData);
       addToast('Employee added successfully');
@@ -42,6 +46,7 @@ const EmployeesManager = () => {
       setFormData({ name: '', role: 'Barber', bio: '' });
       fetchEmployees();
     } catch (error) {
+      console.error('Error creating employee:', error.response?.data);
       addToast('Failed to add employee', 'error');
     }
   };

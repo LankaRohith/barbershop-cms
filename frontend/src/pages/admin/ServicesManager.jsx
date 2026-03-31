@@ -36,16 +36,26 @@ const ServicesManager = () => {
 
   const handleAdd = async (e) => {
     e.preventDefault();
+    if (!formData.name || !formData.price || !formData.description) {
+      addToast('Please fill in all required fields', 'error');
+      return;
+    }
+    const price = parseFloat(formData.price);
+    if (isNaN(price) || price <= 0) {
+      addToast('Please enter a valid price', 'error');
+      return;
+    }
     try {
       await createService({
         ...formData,
-        price: parseFloat(formData.price),
+        price: price,
       });
       addToast('Service added successfully');
       setShowAddForm(false);
       setFormData({ name: '', price: '', description: '', duration_minutes: 30 });
       fetchServices();
     } catch (error) {
+      console.error('Error creating service:', error.response?.data);
       addToast('Failed to add service', 'error');
     }
   };
