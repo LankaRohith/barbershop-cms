@@ -1,26 +1,54 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Scissors, Users, Image, TrendingUp } from 'lucide-react';
 import AdminLayout from './AdminLayout';
+import { getAdminServices, getAdminEmployees, getAdminGallery } from '../../api/index.js';
 
 const AdminDashboard = () => {
-  const stats = [
+  const [stats, setStats] = useState({
+    services: 0,
+    employees: 0,
+    gallery: 0
+  });
+
+  useEffect(() => {
+    const fetchCounts = async () => {
+      try {
+        const [servicesRes, employeesRes, galleryRes] = await Promise.all([
+          getAdminServices(),
+          getAdminEmployees(),
+          getAdminGallery(),
+        ]);
+        setStats({
+          services: servicesRes.data.length,
+          employees: employeesRes.data.length,
+          gallery: galleryRes.data.length
+        });
+      } catch (error) {
+        console.error('Failed to fetch counts:', error);
+      }
+    };
+    fetchCounts();
+  }, []);
+
+  const statItems = [
     { 
       title: 'Services', 
-      value: '12', 
+      value: stats.services, 
       icon: Scissors, 
       color: 'text-barber-gold',
       link: '/admin/services'
     },
     { 
       title: 'Employees', 
-      value: '4', 
+      value: stats.employees, 
       icon: Users, 
       color: 'text-blue-400',
       link: '/admin/employees'
     },
     { 
       title: 'Gallery Images', 
-      value: '24', 
+      value: stats.gallery, 
       icon: Image, 
       color: 'text-green-400',
       link: '/admin/gallery'
@@ -40,7 +68,7 @@ const AdminDashboard = () => {
 
         {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          {stats.map((stat) => (
+          {statItems.map((stat) => (
             <Link
               key={stat.title}
               to={stat.link}
