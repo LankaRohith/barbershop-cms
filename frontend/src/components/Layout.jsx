@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Scissors, Menu, X, Phone, MapPin, Clock } from 'lucide-react';
+import { Menu, X, Phone, MapPin, Clock } from 'lucide-react';
 import { useState } from 'react';
 
 const Navbar = () => {
@@ -25,9 +25,9 @@ const Navbar = () => {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to={isAdmin ? '/admin' : '/'} className="flex items-center gap-2">
-              <Scissors className="w-6 h-6 text-barber-gold" />
+              <img src="/logo1.jpg" alt="Masters Barbershop" className="w-10 h-10 rounded-full object-cover" />
               <span className="font-display text-xl font-bold text-white">
-                {isAdmin ? 'Admin Panel' : 'Classic Cuts'}
+                {isAdmin ? 'Admin Panel' : 'Masters Barbershop'}
               </span>
             </Link>
           </div>
@@ -83,16 +83,16 @@ const Footer = () => (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
-          <h3 className="font-display text-xl font-bold text-white mb-4">Classic Cuts</h3>
+          <h3 className="font-display text-xl font-bold text-white mb-4">Masters Barbershop</h3>
           <p className="text-gray-400">
-            Premium barbershop experience with expert stylists and traditional techniques.
+            Masters Barbershop was established in 2005. Our goal is to provide quality services to our customers.
           </p>
         </div>
         <div>
           <h3 className="font-display text-xl font-bold text-white mb-4">Contact</h3>
           <div className="space-y-2 text-gray-400">
-            <p className="flex items-center gap-2"><MapPin className="w-4 h-4" /> 123 Main St, Downtown</p>
-            <p className="flex items-center gap-2"><Phone className="w-4 h-4" /> (555) 123-4567</p>
+            <p className="flex items-center gap-2"><MapPin className="w-4 h-4" /> 260 Royal Palm Beach Blvd, Royal Palm Beach, FL</p>
+            <p className="flex items-center gap-2"><Phone className="w-4 h-4" /> (561) 798-2622</p>
             <p className="flex items-center gap-2"><Clock className="w-4 h-4" /> Mon-Sat: 9AM-7PM</p>
           </div>
         </div>
@@ -106,7 +106,7 @@ const Footer = () => (
         </div>
       </div>
       <div className="border-t border-barber-700 mt-8 pt-8 text-center text-gray-500">
-        <p>&copy; 2024 Classic Cuts Barber Shop. All rights reserved.</p>
+        <p>&copy; 2024 Masters Barbershop. All rights reserved.</p>
       </div>
     </div>
   </footer>

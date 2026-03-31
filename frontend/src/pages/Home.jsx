@@ -43,14 +43,14 @@ const Home = () => {
         
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <h1 className="font-display text-5xl md:text-7xl font-bold text-white mb-6">
-            Classic Cuts
+            Masters Barbershop
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8">
-            Where Tradition Meets Style
+            Established in 2005
           </p>
           <p className="text-gray-400 mb-10 max-w-2xl mx-auto">
-            Premium barbershop experience with expert stylists, traditional techniques, 
-            and modern amenities. Walk in as you are, leave as a gentleman.
+            Masters Barbershop was established in 2005. Our goal is to provide quality services to our customers. 
+            Walk in as you are, leave as a gentleman.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/services" className="btn-primary text-center">
@@ -70,7 +70,7 @@ const Home = () => {
             <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
               Our Services
             </h2>
-            <p className="text-gray-400">Premium grooming services for the modern gentleman</p>
+            <p className="text-gray-400">Quality grooming services since 2005</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -164,12 +164,12 @@ const Home = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <div className="flex items-center justify-center gap-2 text-gray-300">
               <MapPin className="w-5 h-5 text-barber-gold" />
-              <span>123 Main St, Downtown</span>
+              <span>260 Royal Palm Beach Blvd, Royal Palm Beach, FL 33411</span>
             </div>
             <div className="hidden sm:block text-gray-600">|</div>
             <div className="flex items-center justify-center gap-2 text-gray-300">
               <Star className="w-5 h-5 text-barber-gold" />
-              <span>5.0 Rating</span>
+              <span>4.4 Rating (155 Reviews)</span>
             </div>
           </div>
         </div>

@@ -6,10 +6,10 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">
-            Visit Us
+            Visit Masters Barbershop
           </h1>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            We're conveniently located in downtown. Stop by for a walk-in or call ahead to book your appointment.
+            Located in Royal Plaza, Royal Palm Beach. Stop by for a walk-in or call ahead to book your appointment.
           </p>
         </div>
 
@@ -23,8 +23,9 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-display text-lg font-bold text-white mb-1">Address</h3>
-                  <p className="text-gray-400">123 Main Street</p>
-                  <p className="text-gray-400">Downtown, NY 10001</p>
+                  <p className="text-gray-400">260 Royal Palm Beach Blvd</p>
+                  <p className="text-gray-400">Royal Palm Beach, FL 33411</p>
+                  <p className="text-gray-500 text-sm mt-1">Located in: Royal Plaza</p>
                 </div>
               </div>
             </div>
@@ -36,7 +37,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-display text-lg font-bold text-white mb-1">Phone</h3>
-                  <p className="text-gray-400">(555) 123-4567</p>
+                  <p className="text-gray-400">(561) 798-2622</p>
                   <p className="text-gray-500 text-sm mt-1">Call or text to book</p>
                 </div>
               </div>
@@ -49,7 +50,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-display text-lg font-bold text-white mb-1">Email</h3>
-                  <p className="text-gray-400">info@classiccuts.com</p>
+                  <p className="text-gray-400">eliobarber@yahoo.com</p>
                 </div>
               </div>
             </div>
@@ -85,10 +86,10 @@ const Contact = () => {
             <div className="text-center">
               <MapPin className="w-16 h-16 text-barber-gold mx-auto mb-4" />
               <p className="text-gray-400">
-                Map integration can be added here with Google Maps or similar service.
+                Masters Barbershop
               </p>
               <p className="text-gray-500 text-sm mt-2">
-                123 Main St, Downtown, NY 10001
+                260 Royal Palm Beach Blvd, Royal Palm Beach, FL 33411
               </p>
             </div>
           </div>
