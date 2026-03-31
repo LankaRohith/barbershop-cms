@@ -20,9 +20,9 @@ const AdminDashboard = () => {
           getAdminGallery(),
         ]);
         setStats({
-          services: servicesRes.data.length,
-          employees: employeesRes.data.length,
-          gallery: galleryRes.data.length
+          services: servicesRes.data.filter(s => s.is_active !== false).length,
+          employees: employeesRes.data.filter(e => e.is_active !== false).length,
+          gallery: galleryRes.data.filter(g => g.is_active !== false).length
         });
       } catch (error) {
         console.error('Failed to fetch counts:', error);
