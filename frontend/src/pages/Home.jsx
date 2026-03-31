@@ -159,10 +159,10 @@ const Home = () => {
             Walk in as you are, leave as a gentleman
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <div className="flex items-center justify-center gap-2 text-gray-300">
+            <a href="https://maps.google.com/?q=260+Royal+Palm+Beach+Blvd,+Royal+Palm+Beach,+FL+33411" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 text-gray-300 hover:text-barber-gold">
               <MapPin className="w-5 h-5 text-barber-gold" />
               <span>260 Royal Palm Beach Blvd, Royal Palm Beach, FL 33411</span>
-            </div>
+            </a>
           </div>
         </div>
       </section>
