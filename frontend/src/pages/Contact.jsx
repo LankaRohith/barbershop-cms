@@ -23,9 +23,11 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-display text-lg font-bold text-white mb-1">Address</h3>
-                  <p className="text-gray-400">260 Royal Palm Beach Blvd</p>
-                  <p className="text-gray-400">Royal Palm Beach, FL 33411</p>
-                  <p className="text-gray-500 text-sm mt-1">Located in: Royal Plaza</p>
+                  <a href="https://maps.google.com/?q=260+Royal+Palm+Beach+Blvd,+Royal+Palm+Beach,+FL+33411" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-barber-gold">
+                    <p>260 Royal Palm Beach Blvd</p>
+                    <p>Royal Palm Beach, FL 33411</p>
+                    <p className="text-gray-500 text-sm mt-1">Located in: Royal Plaza</p>
+                  </a>
                 </div>
               </div>
             </div>
@@ -37,8 +39,10 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-display text-lg font-bold text-white mb-1">Phone</h3>
-                  <p className="text-gray-400">(561) 798-2622</p>
-                  <p className="text-gray-500 text-sm mt-1">Call or text to book</p>
+                  <a href="tel:+15617982622" className="text-gray-400 hover:text-barber-gold">
+                    <p>(561) 798-2622</p>
+                    <p className="text-gray-500 text-sm mt-1">Call or text to book</p>
+                  </a>
                 </div>
               </div>
             </div>
@@ -50,7 +54,9 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-display text-lg font-bold text-white mb-1">Email</h3>
-                  <p className="text-gray-400">eliobarber@yahoo.com</p>
+                  <a href="mailto:eliobarber@yahoo.com" className="text-gray-400 hover:text-barber-gold">
+                    <p>eliobarber@yahoo.com</p>
+                  </a>
                 </div>
               </div>
             </div>
@@ -85,12 +91,14 @@ const Contact = () => {
           <div className="card flex items-center justify-center min-h-[400px]">
             <div className="text-center">
               <MapPin className="w-16 h-16 text-barber-gold mx-auto mb-4" />
-              <p className="text-gray-400">
-                Masters Barbershop
-              </p>
-              <p className="text-gray-500 text-sm mt-2">
-                260 Royal Palm Beach Blvd, Royal Palm Beach, FL 33411
-              </p>
+              <a href="https://maps.google.com/?q=260+Royal+Palm+Beach+Blvd,+Royal+Palm+Beach,+FL+33411" target="_blank" rel="noopener noreferrer" className="hover:text-barber-gold">
+                <p className="text-gray-400">
+                  Masters Barbershop
+                </p>
+                <p className="text-gray-500 text-sm mt-2">
+                  260 Royal Palm Beach Blvd, Royal Palm Beach, FL 33411
+                </p>
+              </a>
             </div>
           </div>
         </div>

@@ -91,9 +91,26 @@ const Footer = () => (
         <div>
           <h3 className="font-display text-xl font-bold text-white mb-4">Contact</h3>
           <div className="space-y-2 text-gray-400">
-            <p className="flex items-center gap-2"><MapPin className="w-4 h-4" /> 260 Royal Palm Beach Blvd, Royal Palm Beach, FL (Royal Plaza)</p>
-            <p className="flex items-center gap-2"><Phone className="w-4 h-4" /> (561) 798-2622</p>
-            <p className="flex items-center gap-2"><Clock className="w-4 h-4" /> Mon-Sat: 9AM-7PM</p>
+            <a href="https://maps.google.com/?q=260+Royal+Palm+Beach+Blvd,+Royal+Palm+Beach,+FL+33411" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-barber-gold">
+              <MapPin className="w-4 h-4" /> 260 Royal Palm Beach Blvd, Royal Palm Beach, FL (Royal Plaza)
+            </a>
+            <a href="tel:+15617982622" className="flex items-center gap-2 hover:text-barber-gold">
+              <Phone className="w-4 h-4" /> (561) 798-2622
+            </a>
+            <div className="space-y-1 text-sm">
+              <div className="flex justify-between max-w-[240px]">
+                <span>Mon - Fri:</span>
+                <span>9:00 AM - 7:00 PM</span>
+              </div>
+              <div className="flex justify-between max-w-[240px]">
+                <span>Saturday:</span>
+                <span>9:00 AM - 6:00 PM</span>
+              </div>
+              <div className="flex justify-between max-w-[240px]">
+                <span>Sunday:</span>
+                <span>Closed</span>
+              </div>
+            </div>
           </div>
         </div>
         <div>
