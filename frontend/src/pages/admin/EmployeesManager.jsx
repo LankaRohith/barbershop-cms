@@ -16,7 +16,6 @@ const EmployeesManager = () => {
     name: '',
     role: 'Barber',
     bio: '',
-    is_active: true,
   });
 
   useEffect(() => {
@@ -40,7 +39,7 @@ const EmployeesManager = () => {
       await createEmployee(formData);
       addToast('Employee added successfully');
       setShowAddForm(false);
-      setFormData({ name: '', role: 'Barber', bio: '', is_active: true });
+      setFormData({ name: '', role: 'Barber', bio: '' });
       fetchEmployees();
     } catch (error) {
       addToast('Failed to add employee', 'error');
