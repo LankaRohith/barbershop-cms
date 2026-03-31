@@ -35,25 +35,23 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[80vh] flex items-center justify-center">
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-barber-900" />
-        <div className="absolute inset-0 bg-barber-800">
-          <div className="w-full h-full opacity-30 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-barber-gold/20 via-transparent to-transparent animate-float" />
-        </div>
+        <div className="absolute inset-0 bg-barber-800" />
         
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="font-display text-5xl md:text-7xl font-bold text-white mb-6 animate-slide-down opacity-0" style={{ animationFillMode: 'forwards' }}>
+          <h1 className="font-display text-5xl md:text-7xl font-bold text-white mb-6">
             Masters Barbershop
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 animate-slide-up opacity-0 stagger-1" style={{ animationFillMode: 'forwards' }}>
+          <p className="text-xl md:text-2xl text-gray-300 mb-8">
             Established in 2005
           </p>
-          <p className="text-gray-400 mb-10 max-w-2xl mx-auto animate-fade-in opacity-0 stagger-2" style={{ animationFillMode: 'forwards' }}>
+          <p className="text-gray-400 mb-10 max-w-2xl mx-auto">
             Masters Barbershop was established in 2005. Our goal is to provide quality services to our customers. 
             Walk in as you are, leave as a gentleman.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-scale-in opacity-0 stagger-3" style={{ animationFillMode: 'forwards' }}>
-            <Link to="/services" className="btn-primary text-center animate-pulse-gold">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link to="/services" className="btn-primary text-center">
               View Services
             </Link>
             <Link to="/contact" className="btn-secondary text-center">
@@ -66,7 +64,7 @@ const Home = () => {
       {/* Services Preview */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12 animate-slide-up opacity-0" style={{ animationFillMode: 'forwards' }}>
+          <div className="text-center mb-12">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
               Our Services
             </h2>
@@ -74,13 +72,13 @@ const Home = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, index) => (
-              <div key={service._id} className="card group">
+            {services.map((service) => (
+              <div key={service._id} className="card hover:border-barber-gold/50 transition-colors">
                 <div className="flex items-center justify-between mb-4">
-                  <Scissors className="w-8 h-8 text-barber-gold group-hover:scale-110 transition-transform" />
-                  <span className="text-barber-gold font-bold text-xl group-hover:scale-110 transition-transform">${service.price}</span>
+                  <Scissors className="w-8 h-8 text-barber-gold" />
+                  <span className="text-barber-gold font-bold text-xl">${service.price}</span>
                 </div>
-                <h3 className="font-display text-xl font-bold text-white mb-2 group-hover:text-barber-gold transition-colors">{service.name}</h3>
+                <h3 className="font-display text-xl font-bold text-white mb-2">{service.name}</h3>
                 <p className="text-gray-400 text-sm mb-4">{service.description}</p>
                 <div className="flex items-center gap-2 text-gray-500 text-sm">
                   <Clock className="w-4 h-4" />
@@ -90,8 +88,8 @@ const Home = () => {
             ))}
           </div>
           
-          <div className="text-center mt-10 animate-scale-in opacity-0 stagger-1" style={{ animationFillMode: 'forwards' }}>
-            <Link to="/services" className="btn-secondary inline-flex items-center gap-2 hover-glow">
+          <div className="text-center mt-10">
+            <Link to="/services" className="btn-secondary inline-flex items-center gap-2">
               View All Services <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
@@ -101,7 +99,7 @@ const Home = () => {
       {/* Team Preview */}
       <section className="py-20 px-4 bg-barber-800/50">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12 animate-slide-up opacity-0" style={{ animationFillMode: 'forwards' }}>
+          <div className="text-center mb-12">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
               Meet Our Team
             </h2>
@@ -110,17 +108,17 @@ const Home = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {employees.map((employee) => (
-              <div key={employee._id} className="text-center group">
-                <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-barber-700 flex items-center justify-center overflow-hidden group-hover:ring-4 group-hover:ring-barber-gold/50 transition-all duration-300 group-hover:scale-105">
+              <div key={employee._id} className="text-center">
+                <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-barber-700 flex items-center justify-center overflow-hidden">
                   {employee.image_url ? (
-                    <img src={employee.image_url} alt={employee.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                    <img src={employee.image_url} alt={employee.name} className="w-full h-full object-cover" />
                   ) : (
-                    <span className="text-4xl font-display text-barber-gold group-hover:scale-110 transition-transform">
+                    <span className="text-4xl font-display text-barber-gold">
                       {employee.name.charAt(0)}
                     </span>
                   )}
                 </div>
-                <h3 className="font-display text-xl font-bold text-white group-hover:text-barber-gold transition-colors">{employee.name}</h3>
+                <h3 className="font-display text-xl font-bold text-white">{employee.name}</h3>
                 <p className="text-barber-gold">{employee.role}</p>
               </div>
             ))}
@@ -131,7 +129,7 @@ const Home = () => {
       {/* Gallery Preview */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12 animate-slide-up opacity-0" style={{ animationFillMode: 'forwards' }}>
+          <div className="text-center mb-12">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
               Gallery
             </h2>
@@ -139,12 +137,12 @@ const Home = () => {
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {gallery.map((image, index) => (
-              <div key={image._id} className="aspect-square overflow-hidden rounded-lg group cursor-pointer">
+            {gallery.map((image) => (
+              <div key={image._id} className="aspect-square overflow-hidden rounded-lg">
                 <img 
                   src={image.url} 
                   alt={image.caption || 'Gallery image'} 
-                  className="w-full h-full object-cover group-hover:scale-125 group-hover:rotate-2 transition-all duration-500"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                 />
               </div>
             ))}

@@ -14,23 +14,23 @@
 @layer components {
   .btn-primary {
     @apply bg-barber-gold text-barber-900 px-6 py-3 rounded-md font-medium 
-           hover:bg-barber-gold-light hover:scale-105 hover:shadow-lg hover:shadow-barber-gold/50
-           transition-all duration-300 ease-out;
+           hover:bg-barber-gold-light hover:scale-105 hover:shadow-lg
+           transition-all duration-200 ease-out;
   }
   .btn-secondary {
     @apply border-2 border-barber-gold text-barber-gold px-6 py-3 rounded-md font-medium
            hover:bg-barber-gold hover:text-barber-900 hover:scale-105
-           transition-all duration-300 ease-out;
+           transition-all duration-200 ease-out;
   }
   .card {
     @apply bg-barber-800 rounded-lg p-6 border border-barber-700
-           hover:border-barber-gold/50 hover:shadow-xl hover:shadow-barber-gold/20
-           hover:-translate-y-2 transition-all duration-300 ease-out;
+           hover:border-barber-gold/30 hover:shadow-lg hover:-translate-y-1
+           transition-all duration-200 ease-out;
   }
   .input {
     @apply bg-barber-800 border border-barber-700 rounded-md px-4 py-2 text-white
-           focus:outline-none focus:border-barber-gold focus:ring-2 focus:ring-barber-gold/30
-           transition-all duration-200;
+           focus:outline-none focus:border-barber-gold focus:ring-1 focus:ring-barber-gold/50
+           transition-all duration-150;
   }
 }
 
@@ -38,104 +38,4 @@
   .text-shadow {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
-  .animate-fade-in {
-    animation: fadeIn 1s ease-out forwards;
-  }
-  .animate-slide-up {
-    animation: slideUp 0.8s ease-out forwards;
-  }
-  .animate-slide-down {
-    animation: slideDown 0.8s ease-out forwards;
-  }
-  .animate-scale-in {
-    animation: scaleIn 0.6s ease-out forwards;
-  }
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-  .animate-glow {
-    animation: glow 2s ease-in-out infinite alternate;
-  }
-  .animate-shimmer {
-    animation: shimmer 2s linear infinite;
-    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
-    background-size: 200% 100%;
-  }
-  .hover-lift {
-    @apply transition-transform duration-300 hover:-translate-y-1;
-  }
-  .hover-glow {
-    @apply transition-shadow duration-300 hover:shadow-lg hover:shadow-barber-gold/30;
-  }
-  .stagger-1 { animation-delay: 0.1s; }
-  .stagger-2 { animation-delay: 0.2s; }
-  .stagger-3 { animation-delay: 0.3s; }
-  .stagger-4 { animation-delay: 0.4s; }
-  .stagger-5 { animation-delay: 0.5s; }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideUp {
-  from { 
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to { 
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideDown {
-  from { 
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to { 
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes scaleIn {
-  from { 
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to { 
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-}
-
-@keyframes glow {
-  from { box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
-  to { box-shadow: 0 0 40px rgba(212, 175, 55, 0.6); }
-}
-
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-
-@keyframes pulse-gold {
-  0%, 100% { 
-    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
-  }
-  50% { 
-    box-shadow: 0 0 0 15px rgba(212, 175, 55, 0);
-  }
-}
-
-.animate-pulse-gold {
-  animation: pulse-gold 2s infinite;
 }
