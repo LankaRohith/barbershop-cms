@@ -8,6 +8,7 @@ from datetime import datetime
 from app.config import get_settings
 from app.database import init_database
 from app.routers import services, employees, gallery, admin, auth
+from app.routers.auth import seed_admin_user
 
 settings = get_settings()
 logging.basicConfig(level=logging.INFO)
@@ -21,6 +22,8 @@ async def lifespan(app: FastAPI):
     logger.info("Starting up...")
     await init_database()
     logger.info("Database initialized")
+    await seed_admin_user()
+    logger.info("Admin user seeded")
     yield
     # Shutdown
     logger.info("Shutting down...")
