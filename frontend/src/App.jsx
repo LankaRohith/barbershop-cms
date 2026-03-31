@@ -1,8 +1,6 @@
-import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Navbar, Footer } from './components/Layout';
 import { AuthProvider, useAuth } from './context/AuthContext';
-import PageTransition from './components/PageTransition';
-import TabSwitchAnimation from './components/TabSwitchAnimation';
 
 // Public Pages
 import Home from './pages/Home';
@@ -52,29 +50,16 @@ const AdminRoute = ({ element: Element }) => (
   </ProtectedRoute>
 );
 
-function AppRoutes() {
+function App() {
   return (
-    <>
-      <TabSwitchAnimation />
-      <PageTransition>
+    <AuthProvider>
+      <Router>
         <Routes>
           {/* Public Routes */}
-          <Route 
-            path="/" 
-            element={<PublicLayout><Home /></PublicLayout>} 
-          />
-          <Route 
-            path="/services" 
-            element={<PublicLayout><Services /></PublicLayout>} 
-          />
-          <Route 
-            path="/gallery" 
-            element={<PublicLayout><Gallery /></PublicLayout>} 
-          />
-          <Route 
-            path="/contact" 
-            element={<PublicLayout><Contact /></PublicLayout>} 
-          />
+          <Route path="/" element={<><Navbar /><main className="flex-1"><Home /></main><Footer /></>} />
+          <Route path="/services" element={<><Navbar /><main className="flex-1"><Services /></main><Footer /></>} />
+          <Route path="/gallery" element={<><Navbar /><main className="flex-1"><Gallery /></main><Footer /></>} />
+          <Route path="/contact" element={<><Navbar /><main className="flex-1"><Contact /></main><Footer /></>} />
 
           {/* Admin Routes */}
           <Route path="/admin/login" element={<AdminLogin />} />
@@ -86,16 +71,6 @@ function AppRoutes() {
           {/* Fallback */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
-      </PageTransition>
-    </>
-  );
-}
-
-function App() {
-  return (
-    <AuthProvider>
-      <Router>
-        <AppRoutes />
       </Router>
     </AuthProvider>
   );
