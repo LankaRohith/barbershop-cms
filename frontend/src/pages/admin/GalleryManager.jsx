@@ -3,7 +3,7 @@ import { Upload, Trash2, Image, Loader2 } from 'lucide-react';
 import { getAdminGallery, uploadGalleryImage, deleteGalleryImage } from '../../api';
 import AdminLayout from './AdminLayout';
 import LoadingSpinner from '../../components/LoadingSpinner';
-import { useToast } from '../../hooks/useToast';
+import { useToast } from '../../hooks/useToast.jsx';
 
 const GalleryManager = () => {
   const [images, setImages] = useState([]);

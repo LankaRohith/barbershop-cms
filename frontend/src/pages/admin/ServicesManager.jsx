@@ -3,7 +3,7 @@ import { Plus, Edit2, Trash2, Check, X, Scissors } from 'lucide-react';
 import { getAdminServices, createService, updateService, deleteService } from '../../api';
 import AdminLayout from './AdminLayout';
 import LoadingSpinner from '../../components/LoadingSpinner';
-import { useToast } from '../../hooks/useToast';
+import { useToast } from '../../hooks/useToast.jsx';
 
 const ServicesManager = () => {
   const [services, setServices] = useState([]);

@@ -3,7 +3,7 @@ import { Plus, Edit2, Trash2, Check, X, Users, User } from 'lucide-react';
 import { getAdminEmployees, createEmployee, updateEmployee, deleteEmployee } from '../../api';
 import AdminLayout from './AdminLayout';
 import LoadingSpinner from '../../components/LoadingSpinner';
-import { useToast } from '../../hooks/useToast';
+import { useToast } from '../../hooks/useToast.jsx';
 
 const EmployeesManager = () => {
   const [employees, setEmployees] = useState([]);
