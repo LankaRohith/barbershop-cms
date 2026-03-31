@@ -39,18 +39,18 @@ const Home = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-barber-900" />
         <div className="absolute inset-0 bg-barber-800" />
         
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="font-display text-5xl md:text-7xl font-bold text-white mb-6">
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-up">
+          <h1 className="font-display text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-up delay-100" style={{ animationFillMode: 'forwards' }}>
             Masters Barbershop
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8">
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 animate-fade-up delay-200" style={{ animationFillMode: 'forwards' }}>
             Established in 2005
           </p>
-          <p className="text-gray-400 mb-10 max-w-2xl mx-auto">
+          <p className="text-gray-400 mb-10 max-w-2xl mx-auto animate-fade-up delay-300" style={{ animationFillMode: 'forwards' }}>
             Masters Barbershop was established in 2005. Our goal is to provide quality services to our customers. 
             Walk in as you are, leave as a gentleman.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in delay-300" style={{ animationFillMode: 'forwards' }}>
             <Link to="/services" className="btn-primary text-center">
               View Services
             </Link>
